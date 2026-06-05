@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "莊騏任",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -105.6, "left": -71.96, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -142.5, "left": 82.3, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -26.4,
+      "left": 213,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "bz1:1", "ultrasonic1:GND", "black", [ "v0", "h-48" ] ],
+    [ "esp:GND.3", "ultrasonic1:GND", "black", [ "h0" ] ],
+    [ "esp:5V", "ultrasonic1:VCC", "red", [ "h0.15", "v38.4", "h220.8" ] ],
+    [ "ultrasonic1:TRIG", "esp:18", "green", [ "v0" ] ],
+    [ "esp:5", "ultrasonic1:ECHO", "green", [ "h144" ] ],
+    [ "bz1:2", "esp:16", "green", [ "v19.2", "h-182.8", "v-48" ] ]
+  ],
+  "dependencies": {}
+}
