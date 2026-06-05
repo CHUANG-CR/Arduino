@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "莊騏任",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -58.74,
+      "left": 112.1,
+      "rotate": 90,
+      "attrs": {}
+    },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -357.2, "left": 15.2, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -351.77, "left": 284.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:17", "lcd1:E", "green", [ "v-0.52", "h208.4" ] ],
+    [ "lcd1:RS", "esp:16", "green", [ "v172.8", "h-198.5" ] ],
+    [ "lcd1:D4", "esp:5", "green", [ "v0" ] ],
+    [ "lcd1:D5", "esp:18", "green", [ "v0" ] ],
+    [ "lcd1:D6", "esp:19", "green", [ "v0" ] ],
+    [ "lcd1:D7", "esp:21", "green", [ "v0" ] ],
+    [ "esp:13", "keypad1:R1", "orange", [ "v-9.97", "h6.8" ] ],
+    [ "esp:12", "keypad1:R2", "orange", [ "v-9.97", "h-2.4" ] ],
+    [ "esp:14", "keypad1:R3", "orange", [ "v-9.97", "h-2.5" ] ],
+    [ "esp:27", "keypad1:R4", "orange", [ "v-9.97", "h-2.6" ] ],
+    [ "esp:26", "keypad1:C1", "green", [ "v0" ] ],
+    [ "esp:25", "keypad1:C2", "green", [ "v0" ] ],
+    [ "esp:33", "keypad1:C3", "green", [ "v0" ] ],
+    [ "esp:32", "keypad1:C4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
